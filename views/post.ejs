@@ -1,0 +1,30 @@
+<%- include("includes/head.ejs"); %>
+
+    <body>
+        <%- include("includes/nav.ejs"); %>
+            <div class="conatiner m-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="<%= randImg  %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= post.heading %>
+                                </h5>
+                                <p class="card-text">
+                                    <%= post.content %>
+                                </p>
+                                <p class="card-text"><small class="text-body-secondary">
+                                        <b> <i> @<%= post.username %></i></b>
+                                        <%= post.createdAt.toString().split(" ")[4] %> <span><%= post.createdAt.toString().split(" ").slice(0,4).join(" ") %> </span>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </body>
+
+    </html>

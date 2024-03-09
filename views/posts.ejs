@@ -1,0 +1,47 @@
+<%- include("includes/head.ejs"); %>
+
+    <body>
+        <%- include("includes/nav.ejs"); %>
+            <div class="container">
+
+                <div class="posts">
+                    <% for(post of posts){ %>
+
+
+                        <div class="card m-4">
+
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= post.heading %>
+                                </h5>
+                                <p class="card-text">
+                                    <%= post.content %>
+                                </p>
+
+                                <a href="/posts/<%= post._id %>" class="btn btn-outline-success">View posts</a>
+                                <a href="/posts/update/<%= post._id %>" class="btn btn-outline-primary">Update posts</a>
+
+                                <form action="/posts/<%= post._id %>?_method=DELETE" method="post" class="d-inline">
+                                    <button class="btn btn-outline-danger">Delete posts</button>
+                                </form>
+
+                            </div>
+                        </div>
+
+                        <% } %>
+                </div>
+                <div class="container text-center mt-4">
+                    <form action="/posts/add/new">
+                        <button class="btn btn-success">Create new Post</button>
+                    </form>
+                </div>
+
+
+            </div>
+    </body>
+
+
+
+
+
+    </html>

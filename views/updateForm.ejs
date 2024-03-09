@@ -1,0 +1,32 @@
+<%- include("includes/head.ejs"); %>
+
+    <body>
+        <%- include("includes/nav.ejs"); %>
+            <div class="container">
+                <h2 class="text-center mt-3">User : <%= post.username %>
+                </h2>
+                <form action="/posts/<%= post.id%>?_method=PATCH" method="post">
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="mb-3">
+                                <label for="heading" class="form-label">Heading</label>
+                                <textarea class="form-control" rows="1" name="heading" id="heading"><%=post.heading
+                                    %></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="content" class="form-label">Content</label>
+                                <textarea class="form-control" rows="10" name="content" id="content"><%=post.content
+                                %></textarea>
+                            </div>
+                            <div class="container text-center">
+                                <button class="btn btn-success btn-lg">Update Posts</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    </body>
+
+    </html>
